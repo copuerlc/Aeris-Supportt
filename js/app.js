@@ -118,6 +118,7 @@
       render("");
       setTimeout(() => input.focus(), 20);
     };
+
     const close = () => {
       palette.classList.remove("open");
       palette.setAttribute("aria-hidden","true");
@@ -128,7 +129,11 @@
         e.preventDefault(); open();
       } else if (e.key === "Escape") close();
     });
-    palette.addEventListener("click", e => { if (e.target === palette) close(); });
+
+    palette.addEventListener("click", e => {
+      if (e.target === palette) close();
+    });
+
     input.addEventListener("input", () => render(input.value));
     render("");
   }
@@ -140,38 +145,68 @@
 
     const render = () => {
       const q = input.value.trim().toLowerCase();
+
       if (!q) {
         results.classList.remove("show");
         results.innerHTML = "";
         return;
       }
-      const matches = SEARCH.filter(x => `${x[0]} ${x[1]}`.toLowerCase().includes(q)).slice(0, 7);
+
+      const matches = SEARCH.filter(x =>
+        `${x[0]} ${x[1]}`.toLowerCase().includes(q)
+      ).slice(0, 7);
+
       results.innerHTML = matches.length
-        ? matches.map(x => `<a class="result" href="${depth()}${x[2]}"><b>${x[0]}</b><small>${x[1]}</small></a>`).join("")
+        ? matches.map(x =>
+            `<a class="result" href="${depth()}${x[2]}"><b>${x[0]}</b><small>${x[1]}</small></a>`
+          ).join("")
         : `<div class="result"><b>No match</b><small>Try a different Aeris keyword.</small></div>`;
+
       results.classList.add("show");
     };
 
     input.addEventListener("input", render);
-    input.addEventListener("focus", () => { if (input.value.trim()) render(); });
+
+    input.addEventListener("focus", () => {
+      if (input.value.trim()) render();
+    });
+
     input.addEventListener("keydown", e => {
-      if (e.key === "Escape") { input.value = ""; render(); input.blur(); }
+      if (e.key === "Escape") {
+        input.value = "";
+        render();
+        input.blur();
+      }
+
       if (e.key === "Enter") {
         const first = $(".result[href]", results);
         if (first) first.click();
       }
     });
+
     document.addEventListener("click", e => {
-      if (!e.target.closest(".search")) results.classList.remove("show");
+      if (!e.target.closest(".search")) {
+        results.classList.remove("show");
+      }
     });
   }
 
   function setupStatus() {
     const browser = $("#browserCheck, #browserStatus, [data-browser-status]");
     const connection = $("#connectionCheck, #connectionStatus, [data-connection-status]");
-    if (browser) browser.textContent = navigator.userAgent ? "Ready" : "Unknown";
-    const update = () => { if (connection) connection.textContent = navigator.onLine ? "Online" : "Offline"; };
+
+    if (browser) {
+      browser.textContent = navigator.userAgent ? "Ready" : "Unknown";
+    }
+
+    const update = () => {
+      if (connection) {
+        connection.textContent = navigator.onLine ? "Online" : "Offline";
+      }
+    };
+
     update();
+
     addEventListener("online", update);
     addEventListener("offline", update);
   }
@@ -187,15 +222,27 @@
   function setupLinks() {
     document.addEventListener("click", e => {
       const link = e.target.closest("a[href]");
-      if (!link || link.target === "_blank" || link.hasAttribute("download")) return;
+
+      if (!link || link.target === "_blank" || link.hasAttribute("download")) {
+        return;
+      }
+
       const href = link.getAttribute("href") || "";
-      if (/^(https?:|mailto:|tel:|javascript:|#)/i.test(href)) return;
+
+      if (/^(https?:|mailto:|tel:|javascript:|#)/i.test(href)) {
+        return;
+      }
+
       document.body.classList.add("leaving");
-      setTimeout(() => document.body.classList.remove("leaving"), 170);
+
+      setTimeout(() => {
+        document.body.classList.remove("leaving");
+      }, 170);
     });
   }
 
   window.AERIS = AERIS;
+
   document.addEventListener("DOMContentLoaded", () => {
     buildNav();
     buildFooter();
