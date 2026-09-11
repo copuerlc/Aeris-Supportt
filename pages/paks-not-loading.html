@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paks Not Loading — Aeris Support</title>
+    <meta name="description" content="Fix the Paks Not Loading issue in Aeris.">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/icons/aeris.png">
+
+    <style>
+        .fix-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            opacity: .6;
+            font-size: 14px;
+        }
+
+        .fix-header {
+            margin-bottom: 45px;
+        }
+
+        .fix-badge {
+            display: inline-flex;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(120, 150, 255, .12);
+            border: 1px solid rgba(120, 150, 255, .2);
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .fix-header h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            line-height: 1;
+            margin: 0 0 18px;
+        }
+
+        .fix-header p {
+            font-size: 18px;
+            opacity: .7;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        .fix-card {
+            padding: 28px;
+            margin-bottom: 18px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            backdrop-filter: blur(16px);
+        }
+
+        .step-number {
+            width: 34px;
+            height: 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c8cff, #5ce1ff);
+            color: #05060a;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .fix-card h2 {
+            margin: 0 0 10px;
+            font-size: 22px;
+        }
+
+        .fix-card p {
+            margin: 0;
+            line-height: 1.7;
+            opacity: .75;
+        }
+
+        .path-box {
+            margin-top: 18px;
+            padding: 18px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, .35);
+            border: 1px solid rgba(255, 255, 255, .08);
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 18px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #6878ff, #49d9ff);
+            font-weight: 700;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(80, 150, 255, .25);
+        }
+
+        .warning {
+            border-color: rgba(255, 190, 80, .2);
+            background: rgba(255, 190, 80, .05);
+        }
+
+        .success {
+            margin-top: 30px;
+            padding: 22px;
+            border-radius: 18px;
+            border: 1px solid rgba(80, 255, 180, .15);
+            background: rgba(80, 255, 180, .05);
+        }
+
+        .success strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Aeris navigation -->
+    <aside class="side"></aside>
+
+    <main class="page">
+
+        <div class="fix-page">
+
+            <div class="breadcrumb">
+                Aeris Support / Troubleshooting / Paks Not Loading
+            </div>
+
+            <header class="fix-header">
+                <div class="fix-badge">
+                    Troubleshooting Guide
+                </div>
+
+                <h1>Paks Not Loading</h1>
+
+                <p>
+                    If you launch Aeris but don't see the custom loading screen,
+                    your PAK files most likely weren't loaded correctly.
+                </p>
+            </header>
+
+
+            <!-- STEP 1 -->
+            <section class="fix-card">
+                <div class="step-number">1</div>
+
+                <h2>Check your loading screen</h2>
+
+                <p>
+                    Launch the build and check whether the custom Aeris loading
+                    screen appears.
+                </p>
+
+                <p style="margin-top:12px;">
+                    If you <strong>don't see the custom loading screen</strong>,
+                    this means your PAK files were not loaded.
+                </p>
+            </section>
+
+
+            <!-- STEP 2 -->
+            <section class="fix-card">
+                <div class="step-number">2</div>
+
+                <h2>Download the required file</h2>
+
+                <p>
+                    Download the required file provided by Aeris Support.
+                    This file needs to be placed inside the correct Fortnite
+                    directory.
+                </p>
+
+                <!-- Replace this href with your actual file -->
+                <a
+                    class="download-button"
+                    href="../assets/downloads/YOUR-FILE-HERE"
+                    download
+                >
+                    Download File
+                </a>
+            </section>
+
+
+            <!-- STEP 3 -->
+            <section class="fix-card">
+                <div class="step-number">3</div>
+
+                <h2>Open the NVAftermath folder</h2>
+
+                <p>
+                    Navigate to the following location inside your
+                    <strong>14.40</strong> installation:
+                </p>
+
+                <div class="path-box">
+                    14.40\Engine\Binaries\ThirdParty\NVIDIA\NVaftermath\Win64
+                </div>
+            </section>
+
+
+            <!-- STEP 4 -->
+            <section class="fix-card">
+                <div class="step-number">4</div>
+
+                <h2>Place the file inside Win64</h2>
+
+                <p>
+                    Take the file you downloaded and place it directly inside
+                    the <strong>Win64</strong> folder.
+                </p>
+
+                <div class="path-box">
+                    14.40\Engine\Binaries\ThirdParty\NVIDIA\NVaftermath\Win64
+                </div>
+            </section>
+
+
+            <!-- WARNING -->
+            <section class="fix-card warning">
+                <h2>Still not working?</h2>
+
+                <p>
+                    If the custom loading screen still doesn't appear after
+                    placing the file in the correct directory, open an Aeris
+                    Support ticket and provide as much information as possible
+                    about your installation.
+                </p>
+            </section>
+
+
+            <div class="success">
+                <strong>✓ Fix completed</strong>
+
+                <span>
+                    Restart the 14.40 build and check whether the custom
+                    loading screen appears.
+                </span>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../assets/js/app.js"></script>
+
+</body>
+</html>
