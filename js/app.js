@@ -1,4 +1,3 @@
-
 (() => {
   "use strict";
 
@@ -11,12 +10,13 @@
 
   const NAV = [
     ["START", [["Home","index.html"],["Downloads","pages/downloads.html"],["FAQ","pages/faq.html"]]],
-    ["SUPPORT", [["Troubleshooting","fixes/descriptor-file.html"],["How to Install","pages/how-to-install.html"],["How to Play","pages/how-to-play.html"],["Launcher Setup","pages/launcher-setup.html"]]],
+    ["SUPPORT", [["Troubleshooting","fixes/descriptor-file.html"],["Paks Not Loading","pages/paks-not-loading.html"],["How to Install","pages/how-to-install.html"],["How to Play","pages/how-to-play.html"],["Launcher Setup","pages/launcher-setup.html"]]],
     ["COMMUNITY", [["Discord","pages/discord.html"],["Support","pages/support.html"],["Changelog","pages/changelog.html"]]]
   ];
 
   const SEARCH = [
     ["Failed to Find Descriptor File","PAK loading, Aftermath library and 14.40 checks.","fixes/descriptor-file.html"],
+    ["Paks Not Loading","Fix missing custom loading screens and unloaded PAK files.","pages/paks-not-loading.html"],
     ["Launcher Not Opening","WebView2, network and startup checks.","fixes/launcher-not-opening.html"],
     ["Authentication Failed","Login and session troubleshooting.","fixes/authentication.html"],
     ["Login Screen","Antivirus, WARP and connection checks.","fixes/login-screen.html"],
