@@ -3,7 +3,7 @@
 
   const AERIS = {
     name: "Aeris",
-    version: "1.0.1",
+    version: "1.0.2",
     discord: "https://discord.gg/aerismp",
     installer: "downloads/Aeris_1.0.2_x64_en-US.msi"
   };
