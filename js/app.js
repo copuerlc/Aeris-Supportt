@@ -5,7 +5,7 @@
     name: "Aeris",
     version: "1.0.1",
     discord: "https://discord.gg/aeris",
-    installer: "downloads/Aeris_1.0.1_x64_en-US.msi"
+    installer: "downloads/Aeris_1.0.2_x64_en-US.msi"
   };
 
   const NAV = [
